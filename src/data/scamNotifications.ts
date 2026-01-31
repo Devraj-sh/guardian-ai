@@ -2,39 +2,6 @@ import { ScamNotification } from '@/types/scam';
 
 export const phase1Notifications: ScamNotification[] = [
   {
-    id: 'sbi-kyc',
-    type: 'sms',
-    sender: 'SBI-BANK',
-    preview: 'URGENT: Your SBI account will be blocked in 24 hours...',
-    fullContent: 'URGENT: Your SBI account will be blocked in 24 hours due to incomplete KYC. Update now: http://sbi-kyc-update.in/verify',
-    isScam: true,
-    tactics: ['urgency', 'authority', 'fake-link'],
-    explanation: 'Real banks never send KYC update links via SMS. The domain "sbi-kyc-update.in" is not an official SBI domain. Urgency is used to prevent you from thinking clearly.',
-    timestamp: '2 min ago',
-  },
-  {
-    id: 'upi-refund',
-    type: 'sms',
-    sender: 'NPCI-UPI',
-    preview: 'You have received ₹15,000 refund. Claim now...',
-    fullContent: 'You have received ₹15,000 refund. Claim now by entering UPI PIN at: http://upi-refund.in/claim',
-    isScam: true,
-    tactics: ['reward', 'urgency', 'fake-link'],
-    explanation: 'UPI refunds happen automatically - you never need to "claim" them. Asking for UPI PIN is always a scam. NPCI never sends individual refund messages.',
-    timestamp: '5 min ago',
-  },
-  {
-    id: 'whatsapp-job',
-    type: 'whatsapp',
-    sender: '+91 98765 43210',
-    preview: 'Hi! Amazon is hiring part-time. Earn ₹5000-15000 daily from home...',
-    fullContent: 'Hi! Amazon is hiring part-time workers. Earn ₹5000-15000 daily from home. No experience needed. WhatsApp us to apply. Limited slots!',
-    isScam: true,
-    tactics: ['reward', 'urgency', 'impersonation'],
-    explanation: 'Amazon does not hire through random WhatsApp messages. Unrealistic earnings (₹5000-15000/day) are a major red flag. "Limited slots" creates false urgency.',
-    timestamp: '12 min ago',
-  },
-  {
     id: 'cybercrime-alert',
     type: 'alert',
     sender: 'Cyber Crime Cell',
@@ -43,7 +10,18 @@ export const phase1Notifications: ScamNotification[] = [
     isScam: true,
     tactics: ['threat', 'authority', 'urgency'],
     explanation: 'Law enforcement never threatens arrest via SMS/calls asking you to call back. Real cyber crime reports are filed through official portals, not phone calls.',
-    timestamp: '18 min ago',
+    timestamp: '38 min ago',
+  },
+  {
+    id: 'real-food-delivery',
+    type: 'whatsapp',
+    sender: 'Zomato',
+    preview: 'Your order from Pizza Hut is on the way! 🍕',
+    fullContent: 'Your order #ZOM123456 is on the way! 🍕\n\nDelivery partner: Rahul\nExpected time: 8:35 PM\n\nTrack live in the Zomato app',
+    isScam: false,
+    tactics: [],
+    explanation: 'Legitimate food delivery update. Has order number, delivery partner name, time estimate, and directs to official app (no suspicious links).',
+    timestamp: '42 min ago',
   },
   {
     id: 'icici-card',
@@ -54,29 +32,7 @@ export const phase1Notifications: ScamNotification[] = [
     isScam: true,
     tactics: ['urgency', 'authority', 'reward', 'fake-link'],
     explanation: 'The domain "icici-bank.co.in" is not official (real is icicibank.com). Reward points rarely expire so suddenly. The urgency is designed to prevent verification.',
-    timestamp: '25 min ago',
-  },
-  {
-    id: 'electricity-bill',
-    type: 'sms',
-    sender: 'BESCOM',
-    preview: 'Your electricity will be disconnected today. Pay pending bill...',
-    fullContent: 'Your electricity will be disconnected today due to pending bill of ₹4,250. Pay immediately via: http://pay-electricity.in/bescom',
-    isScam: true,
-    tactics: ['threat', 'urgency', 'fake-link'],
-    explanation: 'Electricity companies provide multiple notices before disconnection, never same-day threats via SMS. Official payment should be through the BESCOM app or website.',
-    timestamp: '32 min ago',
-  },
-  {
-    id: 'real-otp',
-    type: 'sms',
-    sender: 'HDFCBK',
-    preview: '123456 is your OTP for net banking login. Valid for 5 minutes...',
-    fullContent: '123456 is your OTP for net banking login. Valid for 5 minutes. Do not share this with anyone. - HDFC Bank',
-    isScam: false,
-    tactics: [],
-    explanation: 'This is a legitimate OTP message format. It doesn\'t contain any suspicious links, doesn\'t ask you to call anyone, and correctly warns not to share the OTP.',
-    timestamp: '38 min ago',
+    timestamp: '48 min ago',
   },
   {
     id: 'loan-offer',
@@ -87,7 +43,29 @@ export const phase1Notifications: ScamNotification[] = [
     isScam: true,
     tactics: ['reward', 'impersonation'],
     explanation: 'Zero interest loans don\'t exist. No legitimate lender skips documentation and CIBIL checks. Upfront "processing fees" are a classic scam technique.',
-    timestamp: '45 min ago',
+    timestamp: '55 min ago',
+  },
+  {
+    id: 'real-ola-receipt',
+    type: 'email',
+    sender: 'noreply@olacabs.com',
+    preview: 'Your ride receipt - ₹245',
+    fullContent: 'Thanks for riding with Ola!\n\nRide Date: 31 Jan 2026, 9:30 AM\nFrom: Home\nTo: Office\nFare: ₹245\n\nView detailed receipt in the Ola app.',
+    isScam: false,
+    tactics: [],
+    explanation: 'Legitimate ride receipt. Uses official Ola domain (olacabs.com), shows specific details, reasonable fare amount, and directs to official app.',
+    timestamp: '1 hour ago',
+  },
+  {
+    id: 'delivery-attempt',
+    type: 'sms',
+    sender: 'BlueDart',
+    preview: 'Package delivery failed. Reschedule: http://bluedart-redeliver.com',
+    fullContent: 'Your package delivery was attempted at 10:45 AM but failed. Address confirmation required. Reschedule delivery at: http://bluedart-redeliver.com/track',
+    isScam: true,
+    tactics: ['urgency', 'impersonation', 'fake-link'],
+    explanation: 'Legitimate courier services use their official app or website for redelivery. The domain "bluedart-redeliver.com" is not official. Real BlueDart uses bluedart.com.',
+    timestamp: '1 hour ago',
   },
 ];
 
@@ -138,40 +116,33 @@ export const phase3Notifications: ScamNotification[] = [
   },
 ];
 
-export const getTacticsForTraining = (): Record<string, { name: string; description: string; icon: string }> => ({
+export const getTacticsForTraining = (): Record<string, { name: string; description: string }> => ({
   urgency: {
     name: 'Urgency Pressure',
     description: 'Creating artificial time limits to prevent careful thinking. "Act now", "24 hours left", "Expires today"',
-    icon: '⏰',
   },
   authority: {
     name: 'Authority Impersonation',
     description: 'Pretending to be banks, government agencies, or trusted brands to gain credibility.',
-    icon: '🏛️',
   },
   emotional: {
     name: 'Emotional Manipulation',
     description: 'Using fear, greed, or sympathy to override logical thinking.',
-    icon: '💔',
   },
   'fake-link': {
     name: 'Fake Link Pattern',
     description: 'Using domains that look official but aren\'t. Example: "sbi-kyc.in" instead of "sbi.co.in"',
-    icon: '🔗',
   },
   impersonation: {
     name: 'Brand Impersonation',
     description: 'Copying logos, language, and tone of trusted companies like Amazon, Flipkart, banks.',
-    icon: '🎭',
   },
   reward: {
     name: 'Reward Bait',
     description: 'Promising unrealistic rewards, refunds, or easy money to create greed.',
-    icon: '🎁',
   },
   threat: {
     name: 'Threat & Fear',
     description: 'Using threats of arrest, account block, or legal action to create panic.',
-    icon: '⚠️',
   },
 });

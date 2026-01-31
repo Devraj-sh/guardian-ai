@@ -67,9 +67,7 @@ export const LandingScreen = ({ onStart }: LandingScreenProps) => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4 }}
         >
-          Would <span className="text-gradient-cyber">YOU</span> fall for
-          <br />
-          this digital scam?
+          <span className="text-gradient-cyber">FOOLED</span> : The adversarial AI scam
         </motion.h1>
 
         {/* Subtext */}
@@ -96,7 +94,7 @@ export const LandingScreen = ({ onStart }: LandingScreenProps) => {
             className="group relative px-8 py-6 text-lg font-semibold bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(45,212,191,0.4)]"
           >
             <span className="relative z-10 flex items-center gap-2">
-              Start 2-Minute Training
+              Get Your Reality Check
               <motion.span
                 animate={{ x: [0, 5, 0] }}
                 transition={{ duration: 1, repeat: Infinity }}

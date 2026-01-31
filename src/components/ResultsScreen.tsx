@@ -228,9 +228,9 @@ export const ResultsScreen = ({ phase1Interactions, testAnswers, onRestart }: Re
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {[
-            { icon: '📱', stat: '66%', text: 'Rise in UPI fraud cases (2023-24)' },
-            { icon: '💼', stat: '₹1,750 Cr', text: 'Lost to WhatsApp job scams' },
-            { icon: '🏦', stat: '40%', text: 'Victims trusted fake KYC alerts' },
+            { stat: '66%', text: 'Rise in UPI fraud cases (2023-24)' },
+            { stat: '₹1,750 Cr', text: 'Lost to WhatsApp job scams' },
+            { stat: '40%', text: 'Victims trusted fake KYC alerts' },
           ].map((item, i) => (
             <motion.div
               key={i}
@@ -239,7 +239,6 @@ export const ResultsScreen = ({ phase1Interactions, testAnswers, onRestart }: Re
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 1.1 + i * 0.1 }}
             >
-              <div className="text-2xl mb-2">{item.icon}</div>
               <div className="text-xl font-bold text-gradient-cyber">{item.stat}</div>
               <div className="text-xs text-muted-foreground">{item.text}</div>
             </motion.div>

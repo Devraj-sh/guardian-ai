@@ -1,4 +1,4 @@
-export type NotificationType = 'whatsapp' | 'sms' | 'email' | 'alert';
+export type NotificationType = 'whatsapp' | 'sms' | 'email' | 'alert' | 'call';
 
 export type ScamTactic = 
   | 'urgency' 
@@ -19,6 +19,7 @@ export interface ScamNotification {
   tactics: ScamTactic[];
   explanation: string;
   timestamp: string;
+  voiceScript?: string; // For AI voice call scams
 }
 
 export interface UserInteraction {
